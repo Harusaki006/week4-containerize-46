@@ -344,7 +344,7 @@ onMounted(fetchProducts)
   padding: .55rem 1.2rem; font-size: .9rem; font-weight: 700;
   cursor: pointer; transition: background .2s;
 }
-.btn-add:hover { background: #059669; }
+.btn-add:hover { background: #ff0404; }
 
 .main { max-width: 1280px; margin: 0 auto; padding: 1.75rem 1.5rem; }
 
