@@ -136,13 +136,12 @@ onMounted(fetchProducts)
 <template>
   <div>
 
-    <!-- HEADER -->
     <header class="app-header">
       <div class="logo">
         <span class="logo-icon">📦</span>
         <div>
           <div class="logo-name">StockPro</div>
-          <div class="logo-sub">ระบบจัดการสินค้าคงคลัง</div>
+          <div class="logo-sub">ระบบจัดการสินค้าคงคลัง | เลขที่ 046 ปวส.2/3</div>
         </div>
       </div>
       <button class="btn-add" @click="openAdd">+ เพิ่มสินค้า</button>
@@ -150,7 +149,6 @@ onMounted(fetchProducts)
 
     <main class="main">
 
-      <!-- STATS DASHBOARD -->
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-icon si-green">📦</div>
@@ -184,13 +182,11 @@ onMounted(fetchProducts)
         </div>
       </div>
 
-      <!-- LOW STOCK ALERT -->
       <div class="alert-low" v-if="stats.lowStock > 0">
         🚨 มีสินค้า <strong>{{ stats.lowStock }} รายการ</strong>
         ที่มีจำนวนสต็อกน้อยกว่า 10 ชิ้น — กรุณาตรวจสอบและเติมสต็อก
       </div>
 
-      <!-- TOOLBAR -->
       <div class="toolbar">
         <input
           v-model="search"
@@ -206,13 +202,12 @@ onMounted(fetchProducts)
           แสดง {{ filtered.length }} / {{ products.length }} รายการ
         </span>
       </div>
-            <!-- LOADING -->
+
       <div class="state-box" v-if="loading">
         <div class="state-icon">⏳</div>
         <div>กำลังโหลดข้อมูลสินค้า...</div>
       </div>
 
-      <!-- EMPTY -->
       <div class="state-box" v-else-if="filtered.length === 0">
         <div class="state-icon">📭</div>
         <div class="state-title">ไม่พบสินค้า</div>
@@ -221,7 +216,6 @@ onMounted(fetchProducts)
         </div>
       </div>
 
-      <!-- PRODUCT GRID -->
       <div class="product-grid" v-else>
         <div
           v-for="p in filtered"
@@ -262,7 +256,7 @@ onMounted(fetchProducts)
       </div>
 
     </main>
-        <!-- ADD/EDIT MODAL -->
+
     <div class="overlay" v-if="showModal" @click.self="showModal = false">
       <div class="modal">
         <div class="modal-title">
@@ -304,7 +298,6 @@ onMounted(fetchProducts)
       </div>
     </div>
 
-    <!-- DELETE CONFIRM -->
     <div class="overlay" v-if="confirmDelete" @click.self="confirmDelete = null">
       <div class="modal confirm">
         <div class="confirm-icon">🗑️</div>
