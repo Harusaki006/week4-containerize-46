@@ -257,8 +257,8 @@ onMounted(fetchProducts)
 
     </main>
 
-    <footer class="bottom-bar">
-      <span>เลขที่ 046 ปวส.2/3</span>
+    <footer class="magical-bottom-bar">
+      <span class="magical-text">✨ เลขที่ 046 | ปวส.2/3 | ปกฉัตร ลอยรัตน์ 🔮</span>
     </footer>
 
     <div class="overlay" v-if="showModal" @click.self="showModal = false">
@@ -327,8 +327,8 @@ onMounted(fetchProducts)
 .app-container {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 54px; 
-  background-color: #f8faff; /* พื้นหลังสีฟ้าอมม่วงอ่อนๆ ให้ดูสบายตา */
+  padding-bottom: 60px; /* เพิ่มพื้นที่ให้เว้นจาก footer เวทมนตร์ */
+  background-color: #f8faff; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -344,7 +344,6 @@ onMounted(fetchProducts)
 .logo-name { 
   font-weight: 900; 
   font-size: 1.25rem; 
-  /* ไล่สีข้อความ ม่วง - น้ำเงิน */
   background: linear-gradient(135deg, #7c3aed, #2563eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -355,7 +354,7 @@ onMounted(fetchProducts)
 
 .btn-add {
   margin-left: auto;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* ไล่สีปุ่มเป็นม่วงน้ำเงิน */
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); 
   color: #ffffff;
   border: none; border-radius: 8px;
   padding: .6rem 1.3rem; font-size: .9rem; font-weight: 600;
@@ -385,7 +384,6 @@ onMounted(fetchProducts)
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem; flex-shrink: 0;
 }
-/* เปลี่ยนสี Stat Icons ให้เข้าตีม */
 .si-purple { background: #f3e8ff; }
 .si-red    { background: #ffe4e6; }
 .si-indigo { background: #e0e7ff; }
@@ -409,7 +407,7 @@ onMounted(fetchProducts)
 }
 .input-search { flex: 1; min-width: 200px; }
 .input-search:focus, .input-select:focus { 
-  border-color: #6366f1; /* ขอบกลายเป็นสี Indigo ตอนพิม */
+  border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 .input-select { cursor: pointer; }
@@ -431,7 +429,6 @@ onMounted(fetchProducts)
 }
 .product-card:hover { 
   transform: translateY(-4px); 
-  /* เงาโทนม่วงน้ำเงินตอนโฮเวอร์ */
   box-shadow: 0 12px 24px rgba(99, 102, 241, 0.12); 
   border-color: #c7d2fe;
 }
@@ -453,11 +450,11 @@ onMounted(fetchProducts)
 .c-bag   { background: #fff7ed; color: #9a3412; }
 .c-acc   { background: #f0fdf4; color: #15803d; }
 .c-tool  { background: #f1f5f9; color: #475569; }
-.c-other { background: #e0e7ff; color: #3730a3; } /* เปลี่ยนโทนสี other ให้เข้าตีม */
+.c-other { background: #e0e7ff; color: #3730a3; } 
 
 .product-name  { font-size: 1.05rem; font-weight: 700; color: #1e293b; margin-bottom: .35rem; line-height: 1.4; }
 .product-desc  { font-size: .85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; }
-.product-price { font-size: 1.3rem; font-weight: 800; color: #4f46e5; } /* ราคาสี Indigo */
+.product-price { font-size: 1.3rem; font-weight: 800; color: #4f46e5; } 
 
 .stock-info { margin-top: 1rem; }
 .stock-row  { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .4rem; }
@@ -483,34 +480,61 @@ onMounted(fetchProducts)
   flex: 1; padding: .5rem; border-radius: 8px;
   font-size: .85rem; font-weight: 600; cursor: pointer; border: none; transition: all .2s;
 }
-.btn-edit { background: #e0e7ff; color: #4f46e5; } /* แก้ปุ่ม Edit เป็นโทนม่วง/น้ำเงิน */
+.btn-edit { background: #e0e7ff; color: #4f46e5; } 
 .btn-edit:hover { background: #c7d2fe; }
 .btn-del  { background: #ffe4e6; color: #e11d48; }
 .btn-del:hover  { background: #fecdd3; }
 
-/* CSS สำหรับ Bottom Bar แบบไล่สี ม่วง-น้ำเงิน */
-.bottom-bar {
+/* 🔮 CSS สำหรับ Magical Bottom Bar 🔮 */
+.magical-bottom-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(90deg, #1e1b4b, #312e81, #4c1d95); 
-  color: #e0e7ff;
+  /* พื้นหลังไล่สีเข้มแนวเวทมนตร์ */
+  background: linear-gradient(135deg, #0f172a, #312e81, #581c87, #312e81, #0f172a);
+  background-size: 200% 200%;
+  animation: magicBG 6s ease infinite; /* แอนิเมชันขยับพื้นหลัง */
   text-align: center;
-  padding: 0.85rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 800;
   letter-spacing: 0.5px;
   z-index: 100;
-  box-shadow: 0 -4px 15px rgba(30, 27, 75, 0.25);
+  box-shadow: 0 -4px 25px rgba(88, 28, 135, 0.4);
+  border-top: 1px solid rgba(167, 139, 250, 0.3); /* ขอบเรืองแสงบนนิดๆ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.magical-text {
+  /* ตัวหนังสือไล่สีสะท้อนแสง */
+  background: linear-gradient(to right, #c4b5fd, #fbcfe8, #a78bfa, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shineText 3s linear infinite; /* แอนิเมชันแสงวิ่งบนตัวหนังสือ */
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.2);
+}
+
+@keyframes magicBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shineText {
+  to { background-position: 200% center; }
+}
+
+/* Modal CSS */
 .overlay {
   position: fixed; inset: 0;
-  background: rgba(15, 23, 42, 0.6); /* ฉากหลังเข้มอมน้ำเงิน */
+  background: rgba(15, 23, 42, 0.6); 
   display: flex; align-items: center; justify-content: center;
   z-index: 500; padding: 1rem;
-  backdrop-filter: blur(4px); /* ทำให้เบลอฉากหลังนิดนึง */
+  backdrop-filter: blur(4px); 
 }
 .modal {
   background: #ffffff; border-radius: 20px;
