@@ -339,7 +339,7 @@ onMounted(fetchProducts)
 .logo-sub  { font-size: .72rem; color: #64748b; }
 .btn-add {
   margin-left: auto;
-  background: #10b981; color: #fff;
+  background: #d4ff00; color: #fff;
   border: none; border-radius: 8px;
   padding: .55rem 1.2rem; font-size: .9rem; font-weight: 700;
   cursor: pointer; transition: background .2s;
