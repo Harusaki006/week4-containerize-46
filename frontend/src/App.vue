@@ -335,16 +335,16 @@ onMounted(fetchProducts)
 }
 .logo { display: flex; align-items: center; gap: .6rem; }
 .logo-icon { font-size: 1.6rem; }
-.logo-name { font-weight: 800; font-size: 1.15rem; color: #065f46; line-height: 1; }
+.logo-name { font-weight: 800; font-size: 1.15rem; color: #ff00f2; line-height: 1; }
 .logo-sub  { font-size: .72rem; color: #64748b; }
 .btn-add {
   margin-left: auto;
-  background: #10b981; color: #fff;
+  background: #d4ff00; color: #fff;
   border: none; border-radius: 8px;
   padding: .55rem 1.2rem; font-size: .9rem; font-weight: 700;
   cursor: pointer; transition: background .2s;
 }
-.btn-add:hover { background: #059669; }
+.btn-add:hover { background: #00ff55; }
 
 .main { max-width: 1280px; margin: 0 auto; padding: 1.75rem 1.5rem; }
 
@@ -372,7 +372,7 @@ onMounted(fetchProducts)
 .alert-low {
   background: #fef2f2; border: 1px solid #fca5a5;
   border-radius: 10px; padding: .85rem 1.2rem;
-  font-size: .92rem; margin-bottom: 1.5rem; color: #991b1b;
+  font-size: .92rem; margin-bottom: 1.5rem; color: #0004ff;
 }
 
 .toolbar { display: flex; gap: .75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
@@ -381,7 +381,7 @@ onMounted(fetchProducts)
   padding: .6rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px;
   font-size: .95rem; outline: none; transition: border-color .2s;
 }
-.input-search:focus { border-color: #10b981; }
+.input-search:focus { border-color: #ff00ee; }
 .input-select {
   padding: .6rem .9rem; border: 1.5px solid #e2e8f0; border-radius: 8px;
   background: #fff; font-size: .9rem; outline: none; cursor: pointer;
