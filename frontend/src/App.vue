@@ -381,7 +381,7 @@ onMounted(fetchProducts)
   padding: .6rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px;
   font-size: .95rem; outline: none; transition: border-color .2s;
 }
-.input-search:focus { border-color: #10b981; }
+.input-search:focus { border-color: #ff00ee; }
 .input-select {
   padding: .6rem .9rem; border: 1.5px solid #e2e8f0; border-radius: 8px;
   background: #fff; font-size: .9rem; outline: none; cursor: pointer;
