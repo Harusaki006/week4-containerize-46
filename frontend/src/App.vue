@@ -134,14 +134,14 @@ onMounted(fetchProducts)
 </script>
 
 <template>
-  <div>
+  <div class="app-container">
 
     <header class="app-header">
       <div class="logo">
         <span class="logo-icon">📦</span>
         <div>
           <div class="logo-name">StockPro</div>
-          <div class="logo-sub">ระบบจัดการสินค้าคงคลัง | เลขที่ 046 ปวส.2/3</div>
+          <div class="logo-sub">ระบบจัดการสินค้าคงคลัง</div>
         </div>
       </div>
       <button class="btn-add" @click="openAdd">+ เพิ่มสินค้า</button>
@@ -257,6 +257,10 @@ onMounted(fetchProducts)
 
     </main>
 
+    <footer class="bottom-bar">
+      <span>เลขที่ 046 ปวส.2/3</span>
+    </footer>
+
     <div class="overlay" v-if="showModal" @click.self="showModal = false">
       <div class="modal">
         <div class="modal-title">
@@ -319,6 +323,13 @@ onMounted(fetchProducts)
 <style scoped>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  /* เผื่อพื้นที่ด้านล่างไม่ให้เนื้อหาโดน Bottom bar บัง */
+  padding-bottom: 50px; 
+}
+
 .app-header {
   position: sticky; top: 0; z-index: 100;
   background: #fff; border-bottom: 1px solid #e2e8f0;
@@ -332,7 +343,7 @@ onMounted(fetchProducts)
 .logo-sub  { font-size: .72rem; color: #64748b; }
 .btn-add {
   margin-left: auto;
-  background: #d4ff00; color: #fff;
+  background: #d4ff00; color: #111; /* ปรับสีตัวอักษรให้อ่านง่ายขึ้น */
   border: none; border-radius: 8px;
   padding: .55rem 1.2rem; font-size: .9rem; font-weight: 700;
   cursor: pointer; transition: background .2s;
@@ -365,7 +376,7 @@ onMounted(fetchProducts)
 .alert-low {
   background: #fef2f2; border: 1px solid #fca5a5;
   border-radius: 10px; padding: .85rem 1.2rem;
-  font-size: .92rem; margin-bottom: 1.5rem; color: #0004ff;
+  font-size: .92rem; margin-bottom: 1.5rem; color: #dc2626; /* แก้สีเป็นสีแดงให้ดูน่าตกใจขึ้น */
 }
 
 .toolbar { display: flex; gap: .75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
@@ -449,6 +460,22 @@ onMounted(fetchProducts)
 .btn-edit:hover { background: #e2e8f0; }
 .btn-del  { background: #fee2e2; color: #dc2626; }
 .btn-del:hover  { background: #fecaca; }
+
+/* CSS สำหรับ Bottom Bar ใหม่ */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1e293b; /* สีเทาเข้ม */
+  color: #f8fafc;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
 
 .overlay {
   position: fixed; inset: 0;
