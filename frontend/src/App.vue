@@ -335,7 +335,7 @@ onMounted(fetchProducts)
 }
 .logo { display: flex; align-items: center; gap: .6rem; }
 .logo-icon { font-size: 1.6rem; }
-.logo-name { font-weight: 800; font-size: 1.15rem; color: #065f46; line-height: 1; }
+.logo-name { font-weight: 800; font-size: 1.15rem; color: #ff00f2; line-height: 1; }
 .logo-sub  { font-size: .72rem; color: #64748b; }
 .btn-add {
   margin-left: auto;
