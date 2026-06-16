@@ -372,7 +372,7 @@ onMounted(fetchProducts)
 .alert-low {
   background: #fef2f2; border: 1px solid #fca5a5;
   border-radius: 10px; padding: .85rem 1.2rem;
-  font-size: .92rem; margin-bottom: 1.5rem; color: #991b1b;
+  font-size: .92rem; margin-bottom: 1.5rem; color: #0004ff;
 }
 
 .toolbar { display: flex; gap: .75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
